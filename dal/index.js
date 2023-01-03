@@ -21,7 +21,13 @@ class GlobalDAL {
     // Return the query
     return query;
   }
-  filter() {}
+  // Accepts field name and text
+  filter(field,text) {
+    // Filter by text
+    const query = this.model.find({[field]:text});
+    // Return the query
+    return query;
+  }
   projection() {}
   pagination() {}
 }

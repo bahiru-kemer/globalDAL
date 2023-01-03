@@ -17,8 +17,10 @@ run();
 // start
 async function run() {
   try {
-    const result= await users.sort("age",1);
-    console.log(result);  
+    // filter by string 
+    // pass field name and key word
+    const filter= await users.filter("name","Bahiru Mulugeta");
+    console.log(filter);  
   } catch (err) {
     console.log(err.message);
   }

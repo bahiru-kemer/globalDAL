@@ -12,7 +12,15 @@ class GlobalDAL {
     this.model = model;
   }
 
-  sort() {}
+  // Accepts field name and order type
+  sort(field, order) {
+    // Is the order type ascending  or descending
+    const query = order
+      ? this.model.find().sort(field)
+      : this.model.find().sort("-" + field);
+    // Return the query
+    return query;
+  }
   filter() {}
   projection() {}
   pagination() {}

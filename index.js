@@ -17,7 +17,8 @@ run();
 // start
 async function run() {
   try {
-    
+    const result= await users.sort("age",1);
+    console.log(result);  
   } catch (err) {
     console.log(err.message);
   }

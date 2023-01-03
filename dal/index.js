@@ -28,9 +28,12 @@ class GlobalDAL {
     // Return the query
     return query;
   }
-  // Accepts field name and number
-  filterByNumber(field,number){
-
+  // Accepts field name and options
+  filterByNumber(field,options){
+  // Filter by number
+  const query = this.model.find({[field]:{$gte: options.gte, $lte: options.lte}});
+  // Return the query
+  return query;
   }
   // Accepts field name and date
   filterByDate(field,date){

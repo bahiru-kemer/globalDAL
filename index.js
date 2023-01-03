@@ -19,7 +19,10 @@ async function run() {
   try {
     // filter by string 
     // pass field name and key word
-    const filter= await users.filterByText("address.street","Bole road");
+    // const filter= await users.filterByText("address.street","Bole road");
+    // filter by number
+    const filter= await users.filterByNumber("age",{gte:10,lte:30});
+
     console.log(filter);  
   } catch (err) {
     console.log(err.message);

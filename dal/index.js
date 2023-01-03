@@ -22,11 +22,19 @@ class GlobalDAL {
     return query;
   }
   // Accepts field name and text
-  filter(field,text) {
+  filterByText(field,text) {
     // Filter by text
     const query = this.model.find({[field]:text});
     // Return the query
     return query;
+  }
+  // Accepts field name and number
+  filterByNumber(field,number){
+
+  }
+  // Accepts field name and date
+  filterByDate(field,date){
+
   }
   projection() {}
   pagination() {}

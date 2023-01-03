@@ -12,8 +12,30 @@ class GlobalDAL {
     this.model = model;
   }
 
-  sort() {}
-  filter() {}
+  // Accepts field name and order type
+  sort(field, order) {
+    // Is the order type ascending  or descending
+    const query = order
+      ? this.model.find().sort(field)
+      : this.model.find().sort("-" + field);
+    // Return the query
+    return query;
+  }
+  // Accepts field name and text
+  filterByText(field,text) {
+    // Filter by text
+    const query = this.model.find({[field]:text});
+    // Return the query
+    return query;
+  }
+  // Accepts field name and number
+  filterByNumber(field,number){
+
+  }
+  // Accepts field name and date
+  filterByDate(field,date){
+
+  }
   projection() {}
   pagination() {}
 }

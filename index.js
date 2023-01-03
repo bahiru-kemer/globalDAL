@@ -17,7 +17,10 @@ run();
 // start
 async function run() {
   try {
-    
+    // filter by string 
+    // pass field name and key word
+    const filter= await users.filterByText("address.street","Bole road");
+    console.log(filter);  
   } catch (err) {
     console.log(err.message);
   }
